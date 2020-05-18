@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/**
+ * Main file to store all the data.
+ */
+
 public class data : MonoBehaviour
 {
 
@@ -9,14 +14,28 @@ public class data : MonoBehaviour
     public static GameObject defaultTile;
     public static float spriteWidth;
     public static float spriteHeight;
-
-    private static GameObject maroon;
-    private static GameObject orange;
-    private static GameObject pink;
-    private static GameObject purple;
+    public static bool selected;
 
 
-    public static GameObject[] tiles;
+    // Colored Prefabs
+    // *Needs Refactoring*
+    private static GameObject maroonPrefab;
+    private static GameObject orangePrefab;
+    private static GameObject pinkPrefab;
+    private static GameObject purplePrefab;
+
+
+    // Colors 
+    public static Color maroon;
+    public static Color orange;
+    public static Color pink;
+    public static Color purple;
+    public static Color baseColor;
+
+
+    
+
+    public static GameObject[] tiles; ///< tile Color types
 
     public static int[,] dom1 = new int[1, 2] {{1,1}};
     public static int[,] dom2 = new int[2, 1] {{1}, {1}};
@@ -37,14 +56,20 @@ public class data : MonoBehaviour
     {
 
         defaultTile = (GameObject)Resources.Load("Prefabs/DefaultTile");
-        maroon = (GameObject)Resources.Load("Prefabs/BlockMaroon");
-        orange = (GameObject)Resources.Load("Prefabs/BlockOrange");
-        pink = (GameObject)Resources.Load("Prefabs/BlockPink");
-        purple = (GameObject)Resources.Load("Prefabs/BlockPurple");
+        maroonPrefab = (GameObject)Resources.Load("Prefabs/BlockMaroon");
+        orangePrefab = (GameObject)Resources.Load("Prefabs/BlockOrange");
+        pinkPrefab = (GameObject)Resources.Load("Prefabs/BlockPink");
+        purplePrefab = (GameObject)Resources.Load("Prefabs/BlockPurple");
 
-        tiles = new GameObject[] { maroon, orange, pink, purple };
+        tiles = new GameObject[] {maroonPrefab, orangePrefab, pinkPrefab, purplePrefab};
+
+        maroon = maroonPrefab.transform.GetComponent<SpriteRenderer>().color;
+        orange = orangePrefab.transform.GetComponent<SpriteRenderer>().color;
+        pink = pinkPrefab.transform.GetComponent<SpriteRenderer>().color;
+        purple = purplePrefab.transform.GetComponent<SpriteRenderer>().color;
 
 
+        selected = false;
 
         if (defaultTile)
         {
@@ -57,6 +82,9 @@ public class data : MonoBehaviour
         }
 
     }
+    /**
+     * Gets the Array Type block which has varying shapes in 2D array
+     */
     public static int[,] getArrayBlockType(int i)
     {
         if (i == 1)
@@ -120,8 +148,10 @@ public class data : MonoBehaviour
             return null;
         }
     }
-    // Start is called before the first frame update
-
+   
+    /**
+     * Returns the tile color type from 
+     */
     public static GameObject getTileType()
     {
         int i = Random.Range(1, 4);
@@ -132,6 +162,8 @@ public class data : MonoBehaviour
     {
         
     }
+
+
 
     // Update is called once per frame
     void Update()

@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/**
+ * Queue for the three draggable blocks at 
+ * the bottom of the screen.
+ */
 public class queue : MonoBehaviour
 {
 
@@ -13,8 +18,7 @@ public class queue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //b = (GameObject)Resources.Load("Prefabs/Block");
-        //createQueue();
+       
         if(block != null)
         {
              createQueue();
@@ -29,6 +33,10 @@ public class queue : MonoBehaviour
     }
 
 
+    /**
+     * Creates three blocks in designated places 
+     * using data from Data class
+     */
     void createQueue()
     {
         for(int i=0; i < 3; i++)
@@ -46,6 +54,8 @@ public class queue : MonoBehaviour
 
         
     }
+
+
     
-   
+
 }

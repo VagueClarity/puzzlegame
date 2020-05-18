@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6789409000135431458}
   - component: {fileID: 6789409000135431459}
   - component: {fileID: 6789409000135431457}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: BigTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6789409000668782714}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: first
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6789409000742512124}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: third
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6789409001513864311}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: second
   m_TagString: Untagged
   m_Icon: {fileID: 0}
